@@ -1,6 +1,6 @@
 
-<script>
-conole.log('sevil')
+<script setup lang="ts">
+console.log('sevil')
 </script>
 
 <template>
