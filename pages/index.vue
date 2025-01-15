@@ -1,6 +1,6 @@
 
 <script>
-conole.log('sevil')
+console.log('sevil')
 </script>
 
 <template>
