@@ -1,12 +1,9 @@
 
-<script>
-import { defineStore } from 'pinia';
-import { ref } from 'vue';
 
-    export const useMoviesStore = defineStore('posts', {
+export const usePostsStore = defineStore('posts', () => {
 
-}   
-return{
+    return {
 
-});
-</script>
+    }
+})
+
