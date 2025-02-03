@@ -1,24 +1,24 @@
-import { defineStore } from 'pinia';
-import type { Post } from '~/types';
-import { useNuxtApp } from '#app';
+import type { Post, PostResponse } from '~/types'
 
-export const usePostsStore = defineStore('postsStore', () => {
-  const posts = ref<Post[]>([]);
-
-  const { $axios } = useNuxtApp();
+export const usePostsStore = defineStore('posts', () => {
+  const posts = ref<Post[]>()
+  const postCount = ref<number>(0)
 
   const fetchPosts = async () => {
-    try {
-      const response = await $axios.get('/api/posts');
-      posts.value = response.data;
-      console.log('Veriler:', response.data);
-    } catch (error) {
-      console.error('Hata:', error);
+    const { data, error } = await useFetch<PostResponse>('https://dummyjson.com/posts')
+
+    if (error.value) {
+      throw new Error(error.value.message)
     }
-  };
+
+    if (data.value) {
+      postCount.value = data.value.total
+      posts.value = data.value.posts
+    }
+  }
 
   return {
     posts,
     fetchPosts,
-  };
-});
+  }
+})

@@ -1,10 +1,17 @@
 export interface Post {
-    title: String,
-      subtitle: String, 
-      content: String,
-      tag: String ,
-      image: String ,
-      author: String,
-      createdAt: String,
-      
-    }
+  id: number
+  title: string
+  body: string
+  userId: number
+  views: number
+  reactions: {
+    likes: number
+    dislikes: number
+  }
+  tags: string[]
+}
+
+export interface PostResponse {
+  total: number
+  posts: Post[]
+}

@@ -4,8 +4,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@pinia/nuxt'],
   runtimeConfig: {
-  public: {
-    BACKEND_URL: process.env.BACKEND_URL,
+    public: {
+    // BACKEND_URL: process.env.BACKEND_URL,
+    },
   },
-},
 })
