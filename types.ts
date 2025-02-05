@@ -1,13 +1,15 @@
 export interface Post {
   id: number
   title: string
-  body: string
+  subtitle: String
+  content: string
+  image: String
   userId: number
-  views: number
-  reactions: {
-    likes: number
-    dislikes: number
-  }
+  // views: number
+  // reactions: {
+  //   likes: number
+  //   dislikes: number
+  // }
   tags: string[]
 }
 

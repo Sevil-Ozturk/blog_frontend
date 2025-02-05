@@ -25,7 +25,7 @@ onMounted(async () => {
         </div>
 
         <p class="post-body">
-          {{ post.body }}
+          {{ post.content }}
         </p>
       </div>
     </div>
