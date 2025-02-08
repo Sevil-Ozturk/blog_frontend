@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 const postsStore = usePostsStore()
 
 onMounted(async () => {
@@ -103,4 +103,34 @@ onMounted(async () => {
   color: #777;
   font-size: 1rem;
 }
-</style>
+</style> -->
+
+<script setup>
+import { usePostsStore } from '~/stores/posts'
+import { onMounted } from 'vue'
+
+const postsStore = usePostsStore()
+
+onMounted(() => {
+  postsStore.fetchPosts() // Sayfa yüklendiğinde verileri çek
+})
+</script>
+
+<template>
+  <div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Blog Postları ({{ postsStore.postCount }})</h1>
+    <div v-if="postsStore.posts.length">
+      <div
+        v-for="post in postsStore.posts"
+        :key="post._id"
+        class="bg-white p-4 rounded shadow mb-4"
+      >
+        <h2 class="text-xl font-semibold">{{ post.title }}</h2>
+        <p class="text-gray-600">{{ post.subtitle }}</p>
+        <p class="mt-2">{{ post.content }}</p>
+      </div>
+    </div>
+    <p v-else>Yükleniyor...</p>
+  </div>
+</template>
+
