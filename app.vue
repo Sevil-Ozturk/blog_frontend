@@ -1,4 +1,4 @@
-<!-- <script setup lang="ts">
+<script setup lang="ts">
 const postsStore = usePostsStore()
 
 onMounted(async () => {
@@ -103,8 +103,8 @@ onMounted(async () => {
   color: #777;
   font-size: 1rem;
 }
-</style> -->
-
+</style>
+<!-- 
 <script setup>
 import { usePostsStore } from '~/stores/posts'
 import { onMounted } from 'vue'
@@ -132,5 +132,5 @@ onMounted(() => {
     </div>
     <p v-else>Yükleniyor...</p>
   </div>
-</template>
+</template> -->
 
