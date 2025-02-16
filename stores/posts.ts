@@ -22,9 +22,43 @@ export const usePostsStore = defineStore('posts', () => {
     
   }
 
+  const addPost = async (newPost : Post) => {
+    const toast =useToast();
+try{
+
+const {data , error } = await useFetch <Post>('http://localhost:5000/post', {
+  method:'POST',
+  body:newPost
+}) 
+
+if(error.value){
+  throw new Error(error.value.message)
+}
+
+if(data.value){
+  posts.value.push(data.value)
+  postCount.value++
+  toast.add({
+    title: 'Başarılı!',
+    description: 'Yeni post başarıyla eklendi.',
+    color: 'green',
+    icon: 'i-heroicons-check-circle',
+    timeout: 3000 
+  })
+}
+
+}catch(error){
+
+  console.error('Post oluşturulurken hata meydana geldi!!!',error)
+
+}
+
+  }
+
   return {
     posts,
     fetchPosts,
+    addPost,
   }
 })
 

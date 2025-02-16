@@ -1,16 +1,38 @@
 <script setup lang="ts">
+
+// image düzeltilecek !!!!!!!!!!!!!
+
 const postsStore = usePostsStore()
 
 onMounted(async () => {
-  await postsStore.fetchPosts()
+  await postsStore.fetchPosts();
 })
 
+const isOpen = ref(false)
+const title = ref('')
+const content = ref('')
+const image = ref <File | null>(null)
+const tags = ref <string[]>([])
 
-const router = useRouter();
 
-const goToAddPostPage = () => {
-  router.push({ name: 'AddPost' }); // 'AddPost' rotasına yönlendirme yapıyoruz
-};
+const handleAddPost = async () => {
+  const newPost = {
+    title: title.value,
+    content: content.value,
+    image: image.value,  
+    tags: tags.value,   
+  }
+
+  await postsStore.addPost(newPost)
+  
+
+  title.value = ''
+  content.value = ''
+  image.value = null  
+  tags.value = []    
+
+  // isOpen.value = false
+}
 </script>
 
 <template>
@@ -18,6 +40,92 @@ const goToAddPostPage = () => {
     <h1 class="">
       Posts
     </h1>
+
+    <div v-if="postsStore.posts.length">
+      <CardPost
+      v-for="post in postsStore.posts"
+      :key="post._id"
+      :post="post"
+      />
+    </div>
+
+    <div v-else>
+      <p>Hiç yazı bulunamadı.</p>
+    </div>
+  </div>
+ 
+  <div>
+    <UButton label="Open" @click="isOpen = true" />
+
+    <UModal v-model="isOpen" prevent-close>
+      <UCard :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
+        <template #header>
+          <div class="flex items-center justify-between">
+            <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">
+              Lütfen Post Ekleyin
+            </h3>
+            <UButton color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid" class="-my-1" @click="isOpen = false" />
+          </div>
+        </template>
+
+        <form @submit.prevent="handleAddPost">
+          <div>
+        <div>
+
+        </div>
+          <label for="image" >Resim:</label>
+          <input 
+            id="image" 
+            type="file" 
+          />
+        <div>
+          <label for="title">BAŞLIK:</label>
+          <input
+           type="text"
+           id="title"
+           v-model="title"
+          placeholder="Lütfen başlık girin."
+           >
+          </div>
+
+          <div>
+            <label for="content">İÇERİK:</label>
+            <textarea
+            id="content"
+            v-model="content" 
+            placeholder="Lütfen yayınlayacağınız içeriği yazınız"
+            >
+          </textarea>
+          </div>
+
+          <div>
+            <label for="tags">Etiketler:</label>
+
+             <!-- BURADA DÜZENLEME YAPILACAK  -->
+
+            <!-- <select 
+              id="tags" 
+              v-model="tags" 
+              class="w-full p-2 mt-1 border rounded-lg" 
+              multiple
+            >
+              <option value="Vue.js">Vue.js</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="Frontend">Frontend</option>
+              <option value="Backend">Backend</option>
+              <option value="UI/UX">UI/UX</option>
+            </select> -->
+
+          </div>
+        </div>
+       </form>
+      </UCard>
+    </UModal>
+  </div>
+</template>
+
+
+
 
     <!-- <div v-if="postsStore.posts">
       <div v-for="(post, index) in postsStore.posts" :key="index" >
@@ -39,20 +147,3 @@ const goToAddPostPage = () => {
     <!-- <div v-if="postsStore.loading">
       <p>Yazılar yükleniyor...</p>
     </div> -->
-
-    <div v-if="postsStore.posts.length">
-      <CardPost
-      v-for="post in postsStore.posts"
-      :key="post._id"
-      :post="post"
-      />
-    </div>
-
-    <div v-else>
-      <p>Hiç yazı bulunamadı.</p>
-    </div>
-  </div>
-  <div>
-    <UButton @click="goToAddPostPage" class="bg-pink-900 m-5 p-5 border radius-[%50]">ekle</UButton>
-  </div>
-</template>
