@@ -33,6 +33,9 @@ const handleAddPost = async () => {
 
   // isOpen.value = false
 }
+
+const tagOptions = ['Vue.js', 'Java Script', 'Frontend', 'Backend', 'UI/UX']
+
 </script>
 
 <template>
@@ -102,21 +105,12 @@ const handleAddPost = async () => {
             <label for="tags">Etiketler:</label>
 
              <!-- BURADA DÜZENLEME YAPILACAK  -->
-
-            <!-- <select 
-              id="tags" 
-              v-model="tags" 
-              class="w-full p-2 mt-1 border rounded-lg" 
-              multiple
-            >
-              <option value="Vue.js">Vue.js</option>
-              <option value="JavaScript">JavaScript</option>
-              <option value="Frontend">Frontend</option>
-              <option value="Backend">Backend</option>
-              <option value="UI/UX">UI/UX</option>
-            </select> -->
-
+             <UInputMenu id="tags" v-model="tags" :options="tagOptions" multiple :popper="{ placement: 'right-start' }" />
           </div>
+
+          <UButton type="submit" label="Ekle" />
+
+
         </div>
        </form>
       </UCard>

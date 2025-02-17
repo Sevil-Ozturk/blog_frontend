@@ -9,7 +9,7 @@ onMounted(async () => {
 
 const props = defineProps<{
   post: Post
-}>() 
+}>() ;
 </script>
 
 <template>
