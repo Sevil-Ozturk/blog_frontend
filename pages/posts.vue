@@ -14,12 +14,21 @@ const content = ref('')
 const image = ref <File | null>(null)
 const tags = ref <string[]>([])
 
+const convertImageToBase64 = (file: File): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file); // Resmi Base64 formatına oku
+    reader.onload = () => resolve(reader.result as string);  // Başarılı olursa Base64 string olarak döner
+    reader.onerror = (error) => reject(error);  // Hata durumunda
+  });
+};
+
 
 const handleAddPost = async () => {
   const newPost = {
     title: title.value,
     content: content.value,
-    image: image.value,  
+    image: image.value  ? await convertImageToBase64(image.value) : "",
     tags: tags.value,   
   }
 
@@ -31,10 +40,18 @@ const handleAddPost = async () => {
   image.value = null  
   tags.value = []    
 
-  // isOpen.value = false
+  isOpen.value = false
 }
 
 const tagOptions = ['Vue.js', 'Java Script', 'Frontend', 'Backend', 'UI/UX']
+
+// Resim yükleme olayını ele alıyoruz
+const handleImageChange = (event: Event) => {
+  const input = event.target as HTMLInputElement;
+  if (input.files && input.files[0]) {
+    image.value = input.files[0];  // Seçilen dosyayı image değişkenine atıyoruz
+  }
+}
 
 </script>
 
@@ -61,7 +78,7 @@ const tagOptions = ['Vue.js', 'Java Script', 'Frontend', 'Backend', 'UI/UX']
     <UButton label="Open" @click="isOpen = true" />
 
     <UModal v-model="isOpen" prevent-close>
-      <UCard :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
+      <UCard :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800  ' }">
         <template #header>
           <div class="flex items-center justify-between">
             <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">
@@ -80,6 +97,8 @@ const tagOptions = ['Vue.js', 'Java Script', 'Frontend', 'Backend', 'UI/UX']
           <input 
             id="image" 
             type="file" 
+          @change="handleImageChange"
+
           />
         <div>
           <label for="title">BAŞLIK:</label>
@@ -103,8 +122,6 @@ const tagOptions = ['Vue.js', 'Java Script', 'Frontend', 'Backend', 'UI/UX']
 
           <div>
             <label for="tags">Etiketler:</label>
-
-             <!-- BURADA DÜZENLEME YAPILACAK  -->
              <UInputMenu id="tags" v-model="tags" :options="tagOptions" multiple :popper="{ placement: 'right-start' }" />
           </div>
 

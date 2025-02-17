@@ -2,9 +2,9 @@
 export interface Post {
   _id?: string; 
   title: string;
-  subtitle: string;
+  subtitle?: string;
   content: string;
-  image: string;
+  image: string ;
   tags: string[];
   createdAt?: string;
   userId?: number; 
