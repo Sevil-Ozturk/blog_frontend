@@ -6,7 +6,7 @@ export const usePostsStore = defineStore('posts', () => {
 
   const fetchPosts = async () => {
     try {
-    const { data, error } = await useFetch<PostResponse>('http://localhost:5000')
+    const { data, error } = await useAsyncData<PostResponse>('http://localhost:5000')
 
     if (error.value) {
       throw new Error(error.value.message)
@@ -26,7 +26,7 @@ export const usePostsStore = defineStore('posts', () => {
     const toast =useToast();
 try{
 
-const {data , error } = await useFetch <Post>('http://localhost:5000/post', {
+const {data , error } = await useAsyncData <Post>('http://localhost:5000/post', {
   method:'POST',
   body:newPost
 }) 
@@ -45,6 +45,7 @@ if(data.value){
     icon: 'i-heroicons-check-circle',
     timeout: 3000 
   })
+  await fetchPosts();
 }
 
 }catch(error){

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 
 // image düzeltilecek !!!!!!!!!!!!!
 
@@ -134,7 +134,7 @@ const handleImageChange = (event: Event) => {
     </UModal>
   </div>
 </template>
-
+ -->
 
 
 
@@ -158,3 +158,90 @@ const handleImageChange = (event: Event) => {
     <!-- <div v-if="postsStore.loading">
       <p>Yazılar yükleniyor...</p>
     </div> -->
+
+
+
+    <script setup lang="ts">
+const postsStore = usePostsStore();
+
+const isOpen = ref(false);
+const title = ref('');
+const content = ref('');
+const image = ref<File | null>(null);
+const tags = ref<string[]>([]);
+
+// Seçilebilir etiketler
+const tagOptions = ['Vue.js', 'JavaScript', 'Frontend', 'Backend', 'UI/UX'];
+
+// Resmi Base64 formatına dönüştürme fonksiyonu
+const convertImageToBase64 = (file: File): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = (error) => reject(error);
+  });
+};
+
+// Yeni post ekleme fonksiyonu
+const handleAddPost = async () => {
+  const newPost = {
+    title: title.value,
+    content: content.value,
+    image: image.value ? await convertImageToBase64(image.value) : "",
+    tags: tags.value,
+  };
+  console.log("Gönderilen Post:", newPost);/// hatalar var onlar düzeltilecek !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+  await postsStore.addPost(newPost);
+
+  // Formu temizleme
+  title.value = '';
+  content.value = '';
+  image.value = null;
+  tags.value = [];
+  isOpen.value = false;
+};
+
+// Resim seçme işlemi
+const handleImageChange = (event: Event) => {
+  const input = event.target as HTMLInputElement;
+  if (input.files && input.files[0]) {
+    image.value = input.files[0];
+  }
+};
+</script>
+
+<template>
+  <div>
+    <UButton label="Yeni Post Ekle" @click="isOpen = true" />
+
+    <UModal v-model="isOpen" prevent-close>
+      <UCard>
+        <template #header>
+          <div class="flex items-center justify-between">
+            <h3 class="text-base font-semibold">Yeni Post Ekle</h3>
+            <UButton color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid" @click="isOpen = false" />
+          </div>
+        </template>
+
+        <form @submit.prevent="handleAddPost">
+          <div>
+            <label for="image">Resim:</label>
+            <input id="image" type="file" accept="image/*" @change="handleImageChange" />
+
+            <label for="title">Başlık:</label>
+            <input id="title" type="text" v-model="title" placeholder="Lütfen başlık girin." required />
+
+            <label for="content">İçerik:</label>
+            <textarea id="content" v-model="content" placeholder="Lütfen içeriği girin." required></textarea>
+
+            <label for="tags">Etiketler:</label>
+            <UInputMenu id="tags" v-model="tags" :options="tagOptions" multiple />
+
+            <UButton type="submit" label="Ekle" />
+          </div>
+        </form>
+      </UCard>
+    </UModal>
+  </div>
+</template>
