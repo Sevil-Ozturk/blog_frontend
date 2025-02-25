@@ -50,7 +50,13 @@ if(data.value){
 }catch(error){
 
   console.error('Post oluşturulurken hata meydana geldi!!!',error)
-
+  toast.add({
+    title: 'Hata!',
+    description: 'Post eklenirken bir hata oluştu.',
+    color: 'red',
+    icon: 'i-heroicons-x-mark-20-solid',
+    timeout: 3000,
+  });
 }
 
   }
