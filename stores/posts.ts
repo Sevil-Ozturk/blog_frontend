@@ -6,17 +6,15 @@ export const usePostsStore = defineStore('posts', () => {
 
   const fetchPosts = async () => {
     try {
-    const { data, error } = await useAsyncData<PostResponse>('http://localhost:5000')
+    const response = await fetch('http://localhost:5000')
+    
+    const data: PostResponse = await response.json();
 
-    if (error.value) {
-      throw new Error(error.value.message)
-    }
 
-    if (data.value) {
-      postCount.value = data.value.total || 0
-      posts.value = data.value.posts
-      console.log('Veriler başarıyla çekildi:', posts.value) 
-    }}catch (error) {
+      postCount.value = data.total || 0
+      posts.value = data.posts
+
+    }catch (error) {
       console.error("Postları çekerken hata oluştu:", error)
     }
     
@@ -26,14 +24,15 @@ export const usePostsStore = defineStore('posts', () => {
     const toast =useToast();
 try{
 
-const {data , error } = await useAsyncData <Post>('http://localhost:5000/post', {
+const response = await fetch('http://localhost:5000/', {
   method:'POST',
-  body:newPost
-}) 
+  headers:{
+    "Content-Type":"Application/json"
+  },
+  body:JSON.stringify(newPost)
+});
 
-if(error.value){
-  throw new Error(error.value.message)
-}
+const data = await response.json(); 
 
 if(data.value){
   posts.value.push(data.value)
