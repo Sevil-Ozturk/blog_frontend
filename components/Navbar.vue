@@ -5,15 +5,15 @@ const isMenuOpen = ref(false);
 </script>
 
 <template>
-  <nav class="Bg fixed top-0 left-1/2 transform -translate-x-1/2 flex w-full max-w-[1500px] p-5 rounded-[10px] drop-shadow-lg border-2 border-blue-300 z-50 justify-between items-center">
+  <nav class="Bg fixed top-0 left-1/2 transform -translate-x-1/2 flex w-full max-w-[1500px] p-5 rounded-[10px] drop-shadow-lg border-2 border-[#DD8EA3] z-50 justify-between items-center">
     
     <!-- Logo ve İsim gelecek -->
-    <div class="tracking-tight text-3xl font-bold text-white">
+    <div class="tracking-tight text-3xl">
       <h1 class="font-isim">Sevil Öztürk</h1>
     </div>
 
     <!-- Menü web masaüstü -->
-    <ul class="hidden md:flex space-x-6 text-white font-semibold">
+    <ul class="hidden md:flex space-x-6 text-black font-semibold">
       <li><NuxtLink class="nav-link" to="/">Home</NuxtLink></li>
       <li><NuxtLink class="nav-link" to="/posts">Blog</NuxtLink></li>
       <li><NuxtLink class="nav-link btn" to="/contact">CONTACT ME</NuxtLink></li>
@@ -38,7 +38,7 @@ const isMenuOpen = ref(false);
 
 <style scoped>
 /* Google Font: Intel */
-@import url('https://fonts.googleapis.com/css2?family=Intel:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 .nav-link {
   padding: 8px 12px;
@@ -58,13 +58,14 @@ const isMenuOpen = ref(false);
 }
 
 .font-isim {
-  font-family: 'Intel', sans-serif;
-  font-style: normal;
+  font-family: 'Dancing Script', cursive;
+  font-size: 36px;
+  color: #DD8EA3;
 }
 
 .Bg {
-  background-color: #5E61C8;
-  color: white;
+  background-color:#F2E9EA;
+  color: black;
 }
 
 .slide-fade-enter-active,

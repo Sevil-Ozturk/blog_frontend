@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { _backgroundColor } from '#tailwind-config/theme';
+
 const postsStore = usePostsStore();
 
 onMounted(async () => {
@@ -54,11 +56,11 @@ const handleImageChange = (event: Event) => {
 </script>
 
 <template>
-  <div class="p-6">
-
-    <UButton label="Yeni Post Ekle" @click="isOpen = true" />
-
-    <UModal v-model="isOpen" prevent-close class="w-5/6">
+  <div class="relative p-6">
+    <div class="fixed right-0 m-7 absolute">
+      <UButton label="Yeni Post Ekle" @click="isOpen = true" :style="{backgroundColor:'#dd91f4', color: '#313840' }"/>
+    </div>
+    <UModal v-model="isOpen" prevent-close >
       <UCard>
         <template #header>
           <div class="flex items-center justify-between">
@@ -67,37 +69,45 @@ const handleImageChange = (event: Event) => {
           </div>
         </template>
 
-        <form @submit.prevent="handleAddPost" class="inline-block align-middle">
-          <div>
-            <label for="image">Resim:</label>
-            <input id="image" type="file" accept="image/*" @change="handleImageChange" />
+        <form @submit.prevent="handleAddPost" class="space-y-4 p-4">
+          <div >
+            <label for="image" class="block text-sm font-medium text-[#FDDD88] my-2">Resim:</label>
+            <input id="image" type="file" accept="image/*" @change="handleImageChange"  class="mt-1 p-1 block w-full text-sm text-gray-500 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-[#F2E9EB]"/>
 
-            <label for="title">Başlık:</label>
-            <input id="title" type="text" v-model="title" placeholder="Lütfen başlık girin." required />
+            <label for="title" class="block text-sm font-medium text-[#FDDD88] my-2">Başlık:</label>
+            <input id="title" type="text" v-model="title" placeholder="Lütfen başlık girin." required class="bg-[#F2E9EB] w-full border rounded p-1 text-black"/>
 
-            <label for="content">İçerik:</label>
-            <textarea id="content" v-model="content" placeholder="Lütfen içeriği girin." required></textarea>
+            <label for="content" class="block text-sm font-medium text-[#FDDD88] my-2">İçerik:</label>
+            <textarea id="content" v-model="content" placeholder="Lütfen içeriği girin." required class="bg-[#F2E9EB] w-full border rounded p-1 h-[250px] text-black whitespace-pre"></textarea>
 
-            <label for="tags">Etiketler:</label>
-            <UInputMenu id="tags" v-model="tags" :options="tagOptions" multiple />
+            <label for="tags" class="block text-sm font-medium text-[#FDDD88] my-2">Etiketler:</label>
+            <UInputMenu id="tags" v-model="tags" :options="tagOptions" multiple  />
 
-            <UButton type="submit" label="Ekle" class="" />
+            <div class="container justify-end items-end my-3">
+            <UButton type="submit" label="Ekle" :style="{ backgroundColor: '#DD8EA3', color: 'white' }" />
+              </div>
           </div>
         </form>
       </UCard>
     </UModal>
-  </div>
 
 
-  <div class="p-4">
+    <div class="p-4">
     <h1 class="text-2xl font-bold mb-4">Tüm Gönderiler</h1>
 
     <div v-if="postsStore.posts.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <CardPost v-for="post in postsStore.posts" :key="post._id" :post="post" />
+      <CardPost v-for="post in postsStore.posts" :key="post._id" :post="post"   class=""/>
     </div>
 
     <div v-else>
       <p class="text-gray-500">Henüz gönderi bulunmuyor.</p>
     </div>
   </div>
+
+
+
+  </div>
+
+
+ 
 </template>

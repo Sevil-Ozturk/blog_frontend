@@ -1,13 +1,13 @@
 <template>
   <NuxtLayout>
-    <NuxtPage  class="BG min-h-screen min-w-screen   "/>
+    <NuxtPage  class="BG"/>
   </NuxtLayout>
 </template>
 
-<script setup lang="ts">
-</script>
 <style>
 .BG{
-  background-color: #80FBEA;
+  background-color: #F2E9EA;
+  height: 100%;
+  width: 100%;
 }
 </style>
