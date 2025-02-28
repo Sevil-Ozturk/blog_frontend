@@ -1,16 +1,17 @@
-    <script setup lang="ts">
+<script setup lang="ts">
 const postsStore = usePostsStore();
 
 onMounted(async () => {
   await postsStore.fetchPosts()
 })
+
 const isOpen = ref(false);
+
 const title = ref('');
 const content = ref('');
 const image = ref<File | null>(null);
 const tags = ref<string[]>([]);
 
-// Seçilebilir etiketler
 const tagOptions = ['Vue.js', 'JavaScript', 'Frontend', 'Backend', 'UI/UX','Node.JS'];
 
 // Resmi Base64 formatına dönüştürme fonksiyonu
@@ -31,10 +32,11 @@ const handleAddPost = async () => {
     image: image.value ? await convertImageToBase64(image.value) : "",
     tags: tags.value,
   };
-  console.log("Gönderilen Post:", newPost);/// hatalar var onlar düzeltilecek !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+  // console.log("Gönderilen Post:", newPost);
+  //postStore daki addPost fonksiyonuna gönderiyorum :D             Not: Gün gelir buraya bakarsan... Aferin sana iyi başa çıktın :) <3
   await postsStore.addPost(newPost);
 
-  // Formu temizleme
+  // Form temizleme
   title.value = '';
   content.value = '';
   image.value = null;
@@ -52,10 +54,11 @@ const handleImageChange = (event: Event) => {
 </script>
 
 <template>
-  <div class="P-6">
+  <div class="p-6">
+
     <UButton label="Yeni Post Ekle" @click="isOpen = true" />
 
-    <UModal v-model="isOpen" prevent-close>
+    <UModal v-model="isOpen" prevent-close class="w-5/6">
       <UCard>
         <template #header>
           <div class="flex items-center justify-between">
@@ -64,7 +67,7 @@ const handleImageChange = (event: Event) => {
           </div>
         </template>
 
-        <form @submit.prevent="handleAddPost">
+        <form @submit.prevent="handleAddPost" class="inline-block align-middle">
           <div>
             <label for="image">Resim:</label>
             <input id="image" type="file" accept="image/*" @change="handleImageChange" />
@@ -78,7 +81,7 @@ const handleImageChange = (event: Event) => {
             <label for="tags">Etiketler:</label>
             <UInputMenu id="tags" v-model="tags" :options="tagOptions" multiple />
 
-            <UButton type="submit" label="Ekle" />
+            <UButton type="submit" label="Ekle" class="" />
           </div>
         </form>
       </UCard>

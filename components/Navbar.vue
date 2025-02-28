@@ -12,7 +12,7 @@ const isMenuOpen = ref(false);
       <h1 class="font-isim">Sevil Öztürk</h1>
     </div>
 
-    <!-- Menü -->
+    <!-- Menü web masaüstü -->
     <ul class="hidden md:flex space-x-6 text-white font-semibold">
       <li><NuxtLink class="nav-link" to="/">Home</NuxtLink></li>
       <li><NuxtLink class="nav-link" to="/posts">Blog</NuxtLink></li>
@@ -57,19 +57,16 @@ const isMenuOpen = ref(false);
   color: black;
 }
 
-/* Navbar font ayarı */
 .font-isim {
   font-family: 'Intel', sans-serif;
   font-style: normal;
 }
 
-/* Navbar arka planı */
 .Bg {
   background-color: #5E61C8;
   color: white;
 }
 
-/* Animasyonlar */
 .slide-fade-enter-active,
 .slide-fade-leave-active {
   transition: opacity 0.3s ease, transform 0.3s ease;
