@@ -51,11 +51,10 @@ const handleImageChange = (event: Event) => {
 </script>
 
 <template>
-   <div class="fixed right-0 m-7 absolute">
       <UButton label="Yeni Post Ekle" @click="isOpen = true" :style="{backgroundColor:'#dd91f4', color: '#313840' }"/>
-    </div>
-    <UModal v-model="isOpen" prevent-close >
-      <UCard>
+    <UModal v-model="isOpen" prevent-close   class="">
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <UCard class=" w-[800px]">
         <template #header>
           <div class="flex items-center justify-between">
             <h3 class="text-base font-semibold">Yeni Post Ekle</h3>
@@ -83,6 +82,7 @@ const handleImageChange = (event: Event) => {
           </div>
         </form>
       </UCard>
+    </div>
     </UModal>
     
 </template>

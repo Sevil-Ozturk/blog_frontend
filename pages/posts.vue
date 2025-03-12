@@ -10,8 +10,10 @@ onMounted(async () => {
 
 <template>
   <div class="relative p-6">
-    
-    <ModalNewpost/>
+    <div class="fixed right-0 m-7 absolute gap-x-5">
+      <ButtonNewpost/>
+      <ButtonDeletepost/>
+    </div>
 
     <div class="p-4">
       <h1 class="text-2xl font-bold mb-4">Tüm Gönderiler</h1>
