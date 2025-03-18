@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@koijs/table-vue": "^0.0.8",
     "@nuxt/ui": "^2.21.0",
     "@pinia/nuxt": "^0.9.0",
     "nuxt": "^3.15.4",

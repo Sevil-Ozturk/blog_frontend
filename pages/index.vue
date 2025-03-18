@@ -1,4 +1,4 @@
-<!-- <script setup lang="ts">
+<script setup lang="ts">
 import { usePostsStore } from '~/stores/posts'
 
 const postsStore = usePostsStore()
@@ -8,53 +8,114 @@ onMounted(async () => {
 
 </script>
 
-<template>
- anasayfa hazırla
+<!-- <template>
+   <div class="bg-white shadow-lg rounded-2xl p-6">
+    <div class="flex flex-col md:flex-row items-center md:items-start">
+
+    <div class="flex w-full justify center bg-gray-700 rounded h-full  ">
+      sdlfhewlkfhe
+      
+    </div>
+
+    <div class="bg-gray-700 rounded h-full  ">
+dsfdskşfikias
+    </div>
+  </div>
+  </div>
 </template> -->
 
-
-düzenlenecekkk!!!
-
-<script setup lang="ts">
-const socialLinks = [
-  { name: "GitHub", url: "https://github.com/Sevil-Ozturk", icon: "🐱" },
-  { name: "LinkedIn", url: "https://www.linkedin.com/in/sevil-%C3%B6zt%C3%BCrk-0a51252a1/", icon: "🔗" },
-  { name: "Instagram", url: "https://www.instagram.com/sevillozturk0/", icon: "<3" }
-];
-
-const skills = ["Vue.js", "Nuxt.js", "TypeScript", "Tailwind CSS", "Pinia", "API Entegrasyonu"];
-</script>
-
 <template>
-  <div class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 text-white p-6">
-    <!-- Profil Alanı -->
-    <div class="text-center">
-      <img src="" alt="Profil Resmi" class="w-32 h-32 rounded-full mx-auto shadow-lg">
-      <h1 class="text-3xl font-bold mt-4">Merhaba, Ben SEVİL 👋</h1>
-      <p class="text-gray-300 mt-2">Vue.js ve Nuxt.js geliştiricisiyim. Modern web projeleri geliştiriyorum. 🚀</p>
-    </div>
+  <div class="min-h-screen bg-[#fff8f3] p-6 flex justify-center">
+    <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- SOL PANEL -->
+      <div class="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center">
+        <img class="w-28 h-28 rounded-full border-4 border-red-300" 
+             src="https://avatars.githubusercontent.com/u/170648779?v=4" alt="Profile">
+        <h2 class="text-2xl font-bold mt-4">Sevil Öztürk</h2>
+        <p class="text-red-500 font-medium">Web Developer</p>
+        <p class="text-gray-600 italic text-center mt-2">
+          "Merhaba! Ben Sevil, modern ve performans odaklı web uygulamaları geliştiren bir Frontend / Full Stack Developer'ım. Yenilikçi çözümler üretmeyi ve kullanıcı dostu arayüzler tasarlamayı seviyorum. Vue.js, Nuxt.js ve Tailwind CSS gibi güçlü teknolojilerle projeler geliştiriyorum."
+        </p>
 
-    <!-- Sosyal Medya Linkleri -->
-    <div class="flex space-x-4 mt-4">
-      <a v-for="link in socialLinks" :key="link.name" :href="link.url" target="_blank" class="text-lg hover:text-blue-400 transition">
-        {{ link.icon }} {{ link.name }}
-      </a>
-    </div>
+        <!-- Bilgiler -->
+        <div class="mt-4 text-sm">
+          <p><strong>Yaş:</strong> 21</p>
+          <p><strong>Medeni Durum:</strong> Bekar</p>
+          <p><strong>konum:</strong> Bursa</p>
+          <!-- <p><strong>Archetype:</strong> Frequent Flyer</p> -->
+        </div>
 
-    <!-- Beceriler -->
-    <div class="mt-6 text-center">
-      <h2 class="text-xl font-semibold">Becerilerim</h2>
-      <div class="flex flex-wrap justify-center mt-3 gap-3">
-        <span v-for="skill in skills" :key="skill" class="bg-blue-500 px-3 py-1 text-sm rounded-full">
-          {{ skill }}
-        </span>
+        <!-- Etiketler -->
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="bg-red-200 text-red-700 px-3 py-1 rounded-full text-xs">Organized</span>
+          <span class="bg-red-200 text-red-700 px-3 py-1 rounded-full text-xs">Hardworking</span>
+          <span class="bg-red-200 text-red-700 px-3 py-1 rounded-full text-xs">Passionate</span>
+        </div>
       </div>
-    </div>
 
-    <!-- Projeler -->
-    <div class="mt-8 text-center">
-      <h2 class="text-xl font-semibold">Projelerim</h2>
-      <p class="text-gray-400 mt-2">Yakında burada bazı projelerimi paylaşacağım! ✨</p>
+      <!-- SAĞ PANEL -->
+      <div class="md:col-span-2 space-y-6">
+        
+        <!-- Bio -->
+        <div class="bg-white shadow-lg rounded-2xl p-6">
+          <h3 class="text-xl font-bold">Bio</h3>
+          <p class="text-gray-700 text-sm mt-2">
+            Jill is a Regional Director who travels 4-8 times each month for work...
+          </p>
+        </div>
+
+        <!-- Motivations -->
+        <div class="bg-white shadow-lg rounded-2xl p-6">
+          <h3 class="text-xl font-bold">Motivations</h3>
+          <div class="mt-2">
+            <p class="text-sm">Price</p>
+            <div class="w-full bg-gray-200 h-2 rounded-md"><div class="w-1/3 bg-red-500 h-full"></div></div>
+            <p class="text-sm">Speed</p>
+            <div class="w-full bg-gray-200 h-2 rounded-md"><div class="w-2/3 bg-red-500 h-full"></div></div>
+          </div>
+        </div>
+
+        <!-- Personality -->
+        <div class="bg-white shadow-lg rounded-2xl p-6">
+          <h3 class="text-xl font-bold">Personality</h3>
+          <div class="mt-2">
+            <p class="text-sm">Introvert</p>
+            <div class="w-full bg-gray-200 h-2 rounded-md"><div class="w-1/5 bg-red-500 h-full"></div></div>
+          </div>
+        </div>
+
+        <!-- Frustrations & Goals -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white shadow-lg rounded-2xl p-6">
+            <h3 class="text-xl font-bold">Frustrations</h3>
+            <ul class="list-disc text-sm text-gray-700 ml-5 mt-2">
+              <li>Too much time spent booking</li>
+              <li>Not tech savvy</li>
+            </ul>
+          </div>
+          <div class="bg-white shadow-lg rounded-2xl p-6">
+            <h3 class="text-xl font-bold">Goals</h3>
+            <ul class="list-disc text-sm text-gray-700 ml-5 mt-2">
+              <li>To spend less time booking</li>
+              <li>To narrow options quickly</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Favorite Brands -->
+        <div class="bg-white shadow-lg rounded-2xl p-6">
+          <h3 class="text-xl font-bold">Favorite Brands</h3>
+          <div class="flex gap-4 mt-2">
+            <img class="w-12" src="https://via.placeholder.com/50" alt="Adidas">
+            <img class="w-12" src="https://via.placeholder.com/50" alt="Nike">
+            <img class="w-12" src="https://via.placeholder.com/50" alt="Netflix">
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </div>
 </template>
+

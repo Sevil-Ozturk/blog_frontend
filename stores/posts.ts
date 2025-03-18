@@ -6,7 +6,7 @@ export const usePostsStore = defineStore('posts', () => {
 
   const fetchPosts = async () => {
     try {
-    const response = await fetch('http://localhost:5000')
+    const response = await fetch('http://localhost:7000')
     
     const data: PostResponse = await response.json();
 
@@ -23,7 +23,7 @@ export const usePostsStore = defineStore('posts', () => {
   const addPost = async (newPost : Post) => {
     const toast =useToast();
 try{
-    const response = await fetch('http://localhost:5000/', {
+    const response = await fetch('http://localhost:7000/', {
       method:'POST',
       headers:{
         "Content-Type":"Application/json",
