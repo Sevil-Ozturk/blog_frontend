@@ -58,12 +58,59 @@ try{
     });
   }
 
+  // const deletePost = async(id) => {
+  //   const response = await fetch(`http://localhost:7000/${id}`,{
+  //     method:'DELETE',
+
+  //   });
+
+  //   if(!error.value){}
+
+  // }
+
+
+
+  const deletePost = async (id: string) => {
+    try {
+      const response = await fetch(`http://localhost:7000/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        throw new Error("Post silinemedi!");
+      }
+
+      // Başarıyla silindiyse, listeden çıkar
+      posts.value = posts.value.filter(post => post._id !== id);
+      postCount.value--;
+
+      toast.add({
+        title: 'Silindi!',
+        description: 'Post başarıyla silindi.',
+        color: 'green',
+        icon: 'i-heroicons-trash',
+        timeout: 3000
+      });
+
+    } catch (error) {
+      console.error('Post silinirken hata oluştu:', error);
+      toast.add({
+        title: 'Hata!',
+        description: 'Post silinirken bir hata meydana geldi.',
+        color: 'red',
+        icon: 'i-heroicons-x-mark-20-solid',
+        timeout: 3000
+      });
+    }
+  }
+
   }
 
   return {
     posts,
     fetchPosts,
     addPost,
+   
   }
 
 })
