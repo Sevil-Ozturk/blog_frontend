@@ -8,22 +8,6 @@ onMounted(async () => {
 
 </script>
 
-<!-- <template>
-   <div class="bg-white shadow-lg rounded-2xl p-6">
-    <div class="flex flex-col md:flex-row items-center md:items-start">
-
-    <div class="flex w-full justify center bg-gray-700 rounded h-full  ">
-      sdlfhewlkfhe
-      
-    </div>
-
-    <div class="bg-gray-700 rounded h-full  ">
-dsfdskşfikias
-    </div>
-  </div>
-  </div>
-</template> -->
-
 <template>
   <div class="min-h-screen bg-[#fff8f3] p-6 flex justify-center">
     <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -35,22 +19,22 @@ dsfdskşfikias
         <h2 class="text-2xl font-bold mt-4">Sevil Öztürk</h2>
         <p class="text-red-500 font-medium">Web Developer</p>
         <p class="text-gray-600 italic text-center mt-2">
-          "Merhaba! Ben Sevil, modern ve performans odaklı web uygulamaları geliştiren bir Frontend / Full Stack Developer'ım. Yenilikçi çözümler üretmeyi ve kullanıcı dostu arayüzler tasarlamayı seviyorum. Vue.js, Nuxt.js ve Tailwind CSS gibi güçlü teknolojilerle projeler geliştiriyorum."
+          "Merhaba! Ben Sevil, modern ve performans odaklı web uygulamaları geliştiren bir Full Stack Developer'ım. Yenilikçi çözümler üretmeyi ve kullanıcı dostu arayüzler tasarlamayı seviyorum. Vue.js, Nuxt.js ve Tailwind CSS gibi güçlü teknolojilerle projeler geliştiriyorum."
         </p>
 
         <!-- Bilgiler -->
-        <div class="mt-4 text-sm">
+        <div class="mt-4 text-sm text-gray-700">
           <p><strong>Yaş:</strong> 21</p>
           <p><strong>Medeni Durum:</strong> Bekar</p>
-          <p><strong>konum:</strong> Bursa</p>
+          <p><strong>Konum:</strong> Bursa</p>
           <!-- <p><strong>Archetype:</strong> Frequent Flyer</p> -->
         </div>
 
         <!-- Etiketler -->
         <div class="mt-4 flex flex-wrap gap-2">
-          <span class="bg-red-200 text-red-700 px-3 py-1 rounded-full text-xs">Organized</span>
-          <span class="bg-red-200 text-red-700 px-3 py-1 rounded-full text-xs">Hardworking</span>
-          <span class="bg-red-200 text-red-700 px-3 py-1 rounded-full text-xs">Passionate</span>
+          <span class="bg-red-200 text-red-700 px-3 py-1 rounded-full text-xs">Planlı</span>
+          <span class="bg-red-200 text-red-700 px-3 py-1 rounded-full text-xs">Çalışkan</span>
+          <span class="bg-red-200 text-red-700 px-3 py-1 rounded-full text-xs">Takım çalışmasına yatkın</span>
         </div>
       </div>
 
@@ -59,34 +43,37 @@ dsfdskşfikias
         
         <!-- Bio -->
         <div class="bg-white shadow-lg rounded-2xl p-6">
-          <h3 class="text-xl font-bold">Bio</h3>
+          <h3 class="text-xl font-bold text-gray-700">Bio</h3>
           <p class="text-gray-700 text-sm mt-2">
-            Jill is a Regional Director who travels 4-8 times each month for work...
+           Ben Bursa Uludağ Üniversitesi Bilgisayar Programcılığı mezunuyum.Şu anda yazılım alanında kendimi geliştirmekte olup aktif olarak iş arayışımı sürdürmekteyim.
           </p>
         </div>
 
         <!-- Motivations -->
-        <div class="bg-white shadow-lg rounded-2xl p-6">
-          <h3 class="text-xl font-bold">Motivations</h3>
+        <div class="bg-white text-gray-700 shadow-lg rounded-2xl p-6">
+          <h3 class="text-xl font-bold">Uzmanlık Alanlarım</h3>
           <div class="mt-2">
-            <p class="text-sm">Price</p>
-            <div class="w-full bg-gray-200 h-2 rounded-md"><div class="w-1/3 bg-red-500 h-full"></div></div>
-            <p class="text-sm">Speed</p>
+            <p class="text-sm">Nuxt(vue)</p>
             <div class="w-full bg-gray-200 h-2 rounded-md"><div class="w-2/3 bg-red-500 h-full"></div></div>
+            <p class="text-sm">JavaScript & TypeScript</p>
+            <div class="w-full bg-gray-200 h-2 rounded-md"><div class="w-2/3 bg-red-500 h-full"></div></div>
+            <p class="text-sm">Nodejs</p>
+            <div class="w-full bg-gray-200 h-2 rounded-md"><div class="w-1/3 bg-red-500 h-full"></div></div>
+            <p class="text-sm">Mongo Db</p>
+            <div class="w-full bg-gray-200 h-2 rounded-md"><div class="w-1/3 bg-red-500 h-full"></div></div>
           </div>
         </div>
 
-        <!-- Personality -->
-        <div class="bg-white shadow-lg rounded-2xl p-6">
+        <!-- <div class="bg-white text-gray-700 shadow-lg rounded-2xl p-6">
           <h3 class="text-xl font-bold">Personality</h3>
           <div class="mt-2">
             <p class="text-sm">Introvert</p>
             <div class="w-full bg-gray-200 h-2 rounded-md"><div class="w-1/5 bg-red-500 h-full"></div></div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Frustrations & Goals -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
           <div class="bg-white shadow-lg rounded-2xl p-6">
             <h3 class="text-xl font-bold">Frustrations</h3>
             <ul class="list-disc text-sm text-gray-700 ml-5 mt-2">
@@ -101,15 +88,15 @@ dsfdskşfikias
               <li>To narrow options quickly</li>
             </ul>
           </div>
-        </div>
+        </div> -->
 
         <!-- Favorite Brands -->
-        <div class="bg-white shadow-lg rounded-2xl p-6">
-          <h3 class="text-xl font-bold">Favorite Brands</h3>
-          <div class="flex gap-4 mt-2">
-            <img class="w-12" src="https://via.placeholder.com/50" alt="Adidas">
-            <img class="w-12" src="https://via.placeholder.com/50" alt="Nike">
-            <img class="w-12" src="https://via.placeholder.com/50" alt="Netflix">
+        <div class="bg-white shadow-lg rounded-2xl p-6 text-gray-700">
+          <h3 class="text-xl font-bold">Projelerim</h3>
+          <div class="flex gap-4 mt-2 text-red-300">
+            <a class="w-1/3" href="https://github.com/Sevil-Ozturk/dis-klinik-proje"> . Diş Klinik Otomasyonu</a>
+            <a class="w-1/3" href="https://github.com/Sevil-Ozturk/blog_frontend" > . Portfolio Frontend</a>
+            <a class="w-1/3" href="https://github.com/Sevil-Ozturk/blog-backend"> . Portfolio Backend</a>
           </div>
         </div>
 

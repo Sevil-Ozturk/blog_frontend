@@ -7,7 +7,6 @@ const isMenuOpen = ref(false);
 <template>
   <nav class="Bg fixed top-0 left-1/2 transform -translate-x-1/2 flex w-full max-w-[1500px] p-5 rounded-[10px] drop-shadow-lg border-2 border-[#DD8EA3] z-50 justify-between items-center">
     
-    <!-- Logo ve İsim gelecek -->
     <div class="tracking-tight text-3xl">
       <h1 class="font-isim">Sevil Öztürk</h1>
     </div>
@@ -37,7 +36,6 @@ const isMenuOpen = ref(false);
 </template>
 
 <style scoped>
-/* Google Font: Intel */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 .nav-link {
