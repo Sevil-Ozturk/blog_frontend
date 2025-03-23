@@ -69,7 +69,7 @@ try{
   // }
 
 
-
+// düzenlenecekkkk
   const deletePost = async (id: string) => {
     try {
       const response = await fetch(`http://localhost:7000/${id}`, {
