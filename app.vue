@@ -1,12 +1,11 @@
 <template>
   <NuxtLayout>
-    <NuxtPage  class="BG"/>
+    <NuxtPage  class="BG bg-gray-900"/>
   </NuxtLayout>
 </template>
 
 <style>
 .BG{
-  background-color: #F2E9EA;
   height: 100%;
   width: 100%;
 }

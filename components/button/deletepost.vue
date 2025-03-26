@@ -3,7 +3,7 @@ const isOpen =ref(false)
 </script>
 
 <template>
-       <UButton label="Post sil" @click="isOpen = true" :style="{backgroundColor:'#dd91f4', color: '#313840' }"/>
+       <UButton label="Post sil" @click="isOpen = true" :style="{backgroundColor:'#B62DB2', color: '#313840' }"/>
      <UModal v-model="isOpen" prevent-close >
        <UCard>
          <template #header>
