@@ -36,7 +36,7 @@ onMounted(async () => {
       <!--resim -->
     <div class=" h-3/4 w-1/2 justify-start">
       <img class="size-[400px] rounded-full border-4 border-gray-300 justify-center w-full h-full" 
-      src="C:/Users/oztur/OneDrive/Masaüstü/hakkımda2.png" alt="code photo">
+      src="/hakkımda.png" alt="code photo">
     </div>
 
     <!--içerik-->
@@ -66,7 +66,7 @@ Boş zamanlarımda yeni teknolojileri keşfetmeyi, açık kaynak projelere katk�
       <!-- 1. Kart -->
       <div class="bg-blue-900 rounded-[25px]  border-4 w-[500px] h-auto p-5 flex flex-col items-center text-center flex-shrink-0">
         <img class="w-48 h-48 rounded-full mb-4"
-             src="C:/Users/oztur/OneDrive/Masaüstü/github.avif" alt="code photo">
+             src="/github.avif" alt="code photo">
         <p class="text-xl font-sans text-white">
           Bu projem şu anda içerisinde gezinmiş olduğunuz portfolio projemin, blog kısmına ait Backend kısmını kapsar.
           Hatırlatmakta fayda var, bu projemin hem backend hem de frontend kısmı bana aittir.
@@ -85,7 +85,7 @@ Boş zamanlarımda yeni teknolojileri keşfetmeyi, açık kaynak projelere katk�
       <!-- 3. Kart -->
       <div class="bg-blue-900 rounded-[25px] border-gray-300 border-4 w-[500px] h-auto p-5 flex flex-col items-center text-center flex-shrink-0">
         <img class="w-48 h-48 rounded-full mb-4"
-             src="C:/Users/oztur/OneDrive/Masaüstü/tmdb.jpeg" alt="code photo">
+             src="/tmdb.jpeg" alt="code photo">
         <p class="text-xl font-sans text-white">
           Staj dönemimde yapmış olduğum küçük bir movie app projesidir. Nuxt.js (Vue.js) ile yapmış olduğum ilk projelerimdendir.
         </p>
