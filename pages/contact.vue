@@ -9,7 +9,7 @@ const errorMessage = ref('')
 
 const sendMail = async () => {
   try {
-    const { error, data } = await useFetch('http://localhost:3000/contact', {
+    const { error, data } = await useFetch('http://localhost:7000/contact', {
       method: 'POST',
       body: {
         name: name.value,
