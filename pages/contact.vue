@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue'
 
 const name = ref('')
 const email = ref('')
@@ -37,9 +36,9 @@ const sendMail = async () => {
   <div class="p-6 max-w-xl mx-auto">
     <h1 class="text-2xl font-bold mb-4">İletişim Formu</h1>
     <form @submit.prevent="sendMail">
-      <input v-model="name" type="text" placeholder="Adınız" class="input" required />
-      <input v-model="email" type="email" placeholder="Email" class="input" required />
-      <textarea v-model="message" placeholder="Mesajınız" class="textarea" required></textarea>
+      <input v-model="name" type="text" placeholder="Adınız-Soyadınız" class="input" required />
+      <input v-model="email" type="email" placeholder="Email adresiniz" class="input" required />
+      <textarea v-model="message" placeholder="Lütfen Mesajınızı yazın..." class="textarea" required></textarea>
       <button type="submit" class="btn">Gönder</button>
     </form>
 

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { usePostsStore } from '~/stores/posts'
+import Contact from './contact.vue'
 
 const postsStore = usePostsStore()
 onMounted(async () => {
@@ -54,7 +55,7 @@ Boş zamanlarımda yeni teknolojileri keşfetmeyi, açık kaynak projelere katk�
   </div>
 
  <!-- Projelerim Bölümü -->
-<div class="h-screen bg-gray-700 flex flex-col items-center justify-center p-15 w-full gap-10">
+<div class="h-screen bg-gray-800 flex flex-col items-center justify-center p-15 w-full gap-10">
   <!-- Başlık -->
   <h2 class="font-header text-6xl font-sans bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent p-3">
     Projelerim:
@@ -97,7 +98,54 @@ Boş zamanlarımda yeni teknolojileri keşfetmeyi, açık kaynak projelere katk�
   <p class="text-lg font-semibold text-gray-900">...Devamı gelecek. Lütfen beklemede kalın 😃</p>
 </div>
 
+
+  <div class="h-screen bg-gray-900 flex flex-col items-center justify-center p-15 w-full gap-10">
+    <h2 class="font-header text-6xl font-sans bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent p-3">
+      Benimle İletişim Kurmak İster Misin?
+    </h2>
+    <div class="flex flex-row h-screen w-full">
+      <div class=" bg-gray-800 items-center justify-center p-5 w-1/2 mx-10 border-[3px] rounded-[20px]">
+
+        <h3 class="font-header text-6xl m-10 font-sans bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent p-3">
+          İletişim Bilgilerim:
+        </h3>
+
+            <div class="flex flex-row m-10 gap-5">
+              <UIcon name="material-symbols:mail-outline-rounded" class="size-16"/>
+              <div class="flex flex-col gap-1"  >
+                <h2 class="text-2xl font-bold"> Email</h2>
+                <p>ozsevil730@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="flex flex-row m-10 gap-5"  >
+              <UIcon name="material-symbols:call" class="size-16"/>
+              <div class="flex flex-col gap-1"  >
+                <h2  class="text-2xl font-bold">Telefon</h2>
+                <p>(0534) 704 16 51</p>
+              </div>
+            </div>
+
+            <div class="flex flex-row m-10 gap-5">
+              <UIcon name="material-symbols:location-on-outline" class="size-16"/>
+              <div class="flex flex-col gap-1"  >
+                <h2  class="text-2xl font-bold">Konum</h2>
+                <p>Türkiye/Bursa</p>
+              </div>
+            </div>
+      </div>
+
+      <div class=" bg-gray-800 flex flex-col items-center justify-center p-5 w-1/2 mx-10 border-[3px] rounded-[20px]">
+        <h3 class="font-header text-6xl font-sans bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent p-3">
+          İletişim Formum:
+        </h3>
+        <Contact class="w-full"/>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 </template>
 
 <style>
