@@ -51,7 +51,7 @@ const handleImageChange = (event: Event) => {
 </script>
 
 <template>
-      <UButton label="Yeni Post Ekle" @click="isOpen = true" :style="{backgroundColor:'#B62DB2', color: '#313840' }"/>
+      <UButton label="Yeni Post Ekle" @click="isOpen = true" :style="{backgroundColor:'#A855F7', color: 'white' }"/>
     <UModal v-model="isOpen" prevent-close   class="">
       <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
       <UCard class=" w-[800px]">

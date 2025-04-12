@@ -5,7 +5,7 @@ const isMenuOpen = ref(false);
 </script>
 
 <template>
-  <nav class="bg-gray-700 fixed top-0 left-1/2 transform -translate-x-1/2 flex w-full max-w-[1500px] p-5 rounded-[10px] drop-shadow-lg border-2 border-[#B62DB2] z-50 justify-between items-center">
+  <nav class="bg-gray-800 fixed top-0 left-1/2 transform -translate-x-1/2 flex w-full max-w-[1500px] p-5 rounded-[10px] drop-shadow-lg border-2 border-[#B62DB2] z-50 justify-between items-center">
     
     <div class="tracking-tight text-3xl">
       <h1 class="font-isim text-[#B62DB2]">Sevil Öztürk</h1>
