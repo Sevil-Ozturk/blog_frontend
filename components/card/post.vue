@@ -4,11 +4,17 @@ import type { Post } from '~/types'
 const props = defineProps<{
   post: Post
 }>()
+
+//404 hatası alıyorum burda
+const gotoPostDetail= () =>{
+navigateTo(`/post/${props.post._id}`)
+}
+
 </script>
 
 <template>
   <UCard 
-  
+  @click="gotoPostDetail"
   class="relative dark:bg-gray-800 shadow-md rounded-lg overflow-hidden justify-center w-6/7 h-auto flex flex-col"  >
     <template #default>
       <img 

@@ -122,7 +122,7 @@ Boş zamanlarımda yeni teknolojileri keşfetmeyi, açık kaynak projelere katk�
               <UIcon name="material-symbols:call" class="size-16"/>
               <div class="flex flex-col gap-1"  >
                 <h2  class="text-2xl font-bold">Telefon</h2>
-                <p>(0534) 704 16 51</p>
+                <p>(istenilen durumda paylaşabilirim)</p>
               </div>
             </div>
 
@@ -133,6 +133,26 @@ Boş zamanlarımda yeni teknolojileri keşfetmeyi, açık kaynak projelere katk�
                 <p>Türkiye/Bursa</p>
               </div>
             </div>
+
+            
+            <h2 class="text-2xl font-bold mx-20 mt-10"> Sosyal Medya</h2>
+
+            <div class="flex flex-row justify-start items-center gap-10 mt-5 mx-20 ">
+
+              <a href="https://www.linkedin.com/in/sevil-%C3%B6zt%C3%BCrk-0a51252a1/" target="_blank" rel="noopener noreferrer">
+                <UIcon name="mdi:linkedin" class="text-white size-10 hover:text-blue-500 transition duration-300" />
+              </a>
+
+              <a href="https://www.instagram.com/sevillozturk0/" target="_blank" rel="noopener noreferrer">
+                <UIcon name="mdi:instagram" class="text-white size-10 hover:text-pink-500 transition duration-300" />
+              </a>
+
+              <a href="https://github.com/sevillozturk0" target="_blank" rel="noopener noreferrer">
+                <UIcon name="mdi:github" class="text-white size-10 hover:text-gray-400 transition duration-300" />
+              </a>
+
+            </div>
+
       </div>
 
       <div class=" bg-gray-800 flex flex-col items-center justify-center p-5 w-1/2 mx-10 border-[3px] rounded-[20px]">
