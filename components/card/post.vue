@@ -7,7 +7,7 @@ const props = defineProps<{
 
 //404 hatası alıyorum burda
 const gotoPostDetail= () =>{
-navigateTo(`/post/${props.post._id}`)
+navigateTo(`/posts/${props.post._id}`)
 }
 
 </script>
