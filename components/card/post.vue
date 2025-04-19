@@ -5,9 +5,13 @@ const props = defineProps<{
   post: Post
 }>()
 
-//404 hatası alıyorum burda
 const gotoPostDetail= () =>{
-navigateTo(`/posts/${props.post._id}`)
+navigateTo({
+  name:'posts-id',
+  params:{id:props.post._id}
+})
+
+
 }
 
 </script>
@@ -24,8 +28,8 @@ navigateTo(`/posts/${props.post._id}`)
         class="w-full h-64 object-cover mx-auto block rounded-[7px] "
       />
       <div class="p-4 flex-1">
-        <h2 class="text-lg text-purple-500 font-semibold">{{ post.title }}</h2>
-        <p class="text-gray-600 dark:text-gray-300 mt-2 ">
+        <h2 class="text-lg text-purple-500 font-semibold line-clamp-2">{{ post.title }}</h2>
+        <p class="text-gray-600 dark:text-gray-300 mt-2 line-clamp-3 whitespace-pre-line ">
           {{ post.content }}
         </p>
       </div>
