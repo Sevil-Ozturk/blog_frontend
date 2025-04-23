@@ -84,14 +84,6 @@ try{
       posts.value = posts.value.filter(post => post._id !== id);
       postCount.value--;
 
-      toast.add({
-        title: 'Silindi!',
-        description: 'Post başarıyla silindi.',
-        color: 'green',
-        icon: 'i-heroicons-trash',
-        timeout: 3000
-      });
-
     } catch (error) {
       console.error('Post silinirken hata oluştu:', error);
       toast.add({

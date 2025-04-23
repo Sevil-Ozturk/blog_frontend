@@ -12,7 +12,6 @@ onMounted(async () => {
   <div class="relative p-6">
     <div class="fixed right-0 m-7 absolute gap-x-5">
       <ButtonNewpost/>
-      <!-- <ButtonDeletepost/> -->
     </div>
 
     <div class="p-4">

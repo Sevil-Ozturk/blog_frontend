@@ -19,7 +19,12 @@ const post = computed(() => {
 
 <template>
      <div v-if="post" class="p-6">
-    <h1 class="text-3xl font-bold text-purple-600 mb-4">{{ post.title }}</h1>
+      <div class="flex ">
+        <h1 class="text-3xl font-bold text-purple-600 mb-4">{{ post.title }}</h1>
+        <div class="fixed right-0 mx-7 absolute">
+          <ButtonDeletepost/>
+        </div>
+      </div>
     <img v-if="post.image" :src="post.image" alt="Post image" class="w-full rounded mb-4" />
     <p class="text-white-700 whitespace-pre-line">{{ post.content }}</p>
     <div class="mt-4 flex gap-2">
