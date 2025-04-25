@@ -1,3 +1,4 @@
+import Deletepost from '~/components/button/deletepost.vue'
 import type { Post, PostResponse } from '~/types'
 
 export const usePostsStore = defineStore('posts', () => {
@@ -70,9 +71,9 @@ try{
 
 
 // düzenlenecekkkk
-  const deletePost = async (id: string) => {
+  const deletePost = async (_id: string) => {
     try {
-      const response = await fetch(`http://localhost:7000/${id}`, {
+      const response = await fetch(`http://localhost:7000/${_id}`, {
         method: 'DELETE',
       });
 
@@ -81,7 +82,7 @@ try{
       }
 
       // Başarıyla silindiyse, listeden çıkar
-      posts.value = posts.value.filter(post => post._id !== id);
+      posts.value = posts.value.filter(post => post._id !== _id);
       postCount.value--;
 
     } catch (error) {
@@ -102,6 +103,7 @@ try{
     posts,
     fetchPosts,
     addPost,
+    Deletepost,
    
   }
 
